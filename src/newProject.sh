@@ -29,6 +29,17 @@ case $language in
         mv ${newprojectfolder}src/script.sh ${newprojectfolder}src/${projectname}.sh
         echo "Renamed script.sh to " $projectname".sh"
         ;;
+    "bash")
+        # Create zsh project
+        cp -r /home/janerik/Dokumenter/source/templates/bash/ $newprojectfolder
+        echo "BASH project created "$projectname
+        # Move to new project folder
+        cd $newprojectfolder/
+
+        # Rename main script file
+        mv ${newprojectfolder}src/script.sh ${newprojectfolder}src/${projectname}.sh
+        echo "Renamed script.sh to " $projectname".sh"
+        ;;
 
     * )
         # No language match
