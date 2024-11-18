@@ -3,7 +3,7 @@
 
 A zsh script to make setting up a new project quicker
 
-Language options: c++, python, zsh
+Language options: c++, python, zsh, bash
 
 1. Copies template folder based on language to source directory
 2. Initializes git in the new project directory
