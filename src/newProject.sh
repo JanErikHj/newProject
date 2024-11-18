@@ -24,9 +24,10 @@ case $language in
         echo "ZSH project created "$projectname
         # Move to new project folder
         cd $newprojectfolder/
-        # Create script File
-        touch src/$projectname".sh"
-        echo "#!/bin/zsh" > src/$projectname".sh"
+
+        # Rename main script file
+        mv ${newprojectfolder}src/script.sh ${newprojectfolder}src/${projectname}.sh
+        echo "Renamed script.sh to " $projectname".sh"
         ;;
 
     * )
@@ -35,7 +36,6 @@ case $language in
         exit -1
         ;;
 esac
-
 
 # Initialize loval git repo
 git init
@@ -59,3 +59,4 @@ echo "Git Push Completed"
 # Open new project in VS Code
 echo "Opening project in VS Code"
 exec code /home/janerik/Dokumenter/source/$projectname/
+echo "DONE !"
