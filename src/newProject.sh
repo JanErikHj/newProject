@@ -1,4 +1,19 @@
 #!/bin/zsh
+
+# Author: Jan Erik Hjelseth
+# Date Created: 10.11.2024
+# Last modified: 05.12.2024
+
+# Description:
+# The script creates project structure based on argument indicating programming language
+# Git is also initialised in the project folder, and a repository created on github
+# The main branch is committed and initial push to upstream branch
+# Files for the project are also created in the Obsidian Vault for notes/research/documentation etc
+
+# Usage:
+# newProject [language]
+
+
 language=$1
 projectname=$2
 newprojectfolder="/home/janerik/Dokumenter/source/"$projectname"/"
@@ -48,7 +63,11 @@ case $language in
         ;;
 esac
 
-# Initialize loval git repo
+
+# Create Obsidian Note Files
+
+
+# Initialize local git repo
 git init
 echo "Git Init Completed"
 
