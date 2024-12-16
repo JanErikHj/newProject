@@ -1,11 +1,12 @@
 #!/bin/zsh
 language=$1
 projectname=$2
-newprojectfolder="/home/janerik/Dokumenter/source/"$projectname"/"
+# newprojectfolder="/home/janerik/Dokumenter/source/"$projectname"/"
 
 case $language in
     "c++")
         # Create C++ project
+        newprojectfolder="/home/janerik/Dokumenter/source/cppProjects/"$projectname"/"
         cp -r /home/janerik/Dokumenter/source/templates/cpp/ $newprojectfolder
         echo "C++ project created " $projectname
         # Move to new project folder
@@ -13,6 +14,7 @@ case $language in
         ;;
     "python")
         # Create Python project
+        newprojectfolder="/home/janerik/Dokumenter/source/pyProjects/"$projectname"/"
         cp -r /home/janerik/Dokumenter/source/templates/python/ $newprojectfolder
         echo "Python project created "$projectname
         # Move to new project folder
@@ -20,6 +22,7 @@ case $language in
         ;;
     "zsh")
         # Create zsh project
+        newprojectfolder="/home/janerik/Dokumenter/source/bashProjects/"$projectname"/"
         cp -r /home/janerik/Dokumenter/source/templates/zsh/ $newprojectfolder
         echo "ZSH project created "$projectname
         # Move to new project folder
@@ -31,6 +34,7 @@ case $language in
         ;;
     "bash")
         # Create zsh project
+        newprojectfolder="/home/janerik/Dokumenter/source/bashProjects/"$projectname"/"
         cp -r /home/janerik/Dokumenter/source/templates/bash/ $newprojectfolder
         echo "BASH project created "$projectname
         # Move to new project folder
@@ -48,7 +52,7 @@ case $language in
         ;;
 esac
 
-# Initialize loval git repo
+# Initialize local git repo
 git init
 echo "Git Init Completed"
 
@@ -69,5 +73,5 @@ echo "Git Push Completed"
 
 # Open new project in VS Code
 echo "Opening project in VS Code"
-exec code /home/janerik/Dokumenter/source/$projectname/
+exec $newprojectfolder
 echo "DONE !"
